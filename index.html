@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo">🎓</div>
+        <span>Student Management System</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1>Student Management System</h1>
+
+      <div class="dashboard">
+        <!-- Add Student -->
+        <section class="card form-card">
+          <h2 id="formTitle">Add New Student</h2>
+
+          <form id="studentForm">
+            <input type="hidden" id="editIndex">
+
+            <label for="rollNumber">Roll Number</label>
+            <input id="rollNumber" type="text" placeholder="Enter roll number" required>
+
+            <label for="studentName">Name</label>
+            <input id="studentName" type="text" placeholder="Enter student name" required>
+
+            <label for="course">Course</label>
+            <input id="course" type="text" placeholder="Enter course" required>
+
+            <button class="add-btn" id="submitBtn" type="submit">Add Student</button>
+            <button class="cancel-btn hidden" id="cancelEditBtn" type="button">Cancel Edit</button>
+          </form>
+        </section>
+
+        <!-- Student List -->
+        <section class="card list-card">
+          <h2>Student List</h2>
+
+          <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search students...">
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Roll Number</th>
+                  <th>Name</th>
+                  <th>Course</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            No students found.
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
